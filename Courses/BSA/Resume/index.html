@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume</title>
+
+        <!--META-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Kizlo Taras"/>
+        <meta name="description" content="My very own personal website. Basically this is just a resume. "/>
+        <meta name="keywords" content="resume, programming"/>
+
+        <!--LINKS-->
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/ico/brackets.ico">   
+        <!--LIBS-->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="lib/fontawesome/all.min.css" rel="stylesheet"/> 
+
+        <!--CUSTOM-->
+        <link href="css/index.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+
+    <!--CONTENT-->
+    <div class="container" id="wrapper"> 
+            <div class="row">
+
+                <!--LEFT PANEL-->
+                <div class="col-4" id="left-panel">
+                        <div id="fixed-block">
+                                <div>
+                                        <h3 class="float-left">Kizlo Taras</h3>
+                                        <i class="fas fa-thumbtack float-right"></i>
+                                </div>
+                                <img src="https://avatars1.githubusercontent.com/u/24938726?s=400&u=5142c8e1d7159a6802227a4a1fd9386f6ba2f0bb&v=4"  class="img-thumbnail" alt="Git avatar"/>
+                                <h4 class="text-muted">iamprovidence</h4>
+                                <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.      
+                                </p>
+                                <p>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                        </div>                   
+                </div>
+
+                <!--RIGHT PANEL-->
+                <div class="col-8" id="right-panel">
+                        <!--ABOUT ME-->
+                        <h4>About me</h4>
+                        <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
+                        <p>
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+
+                        <!--MY INTERESTS-->
+                        <div class="my-interests">
+
+                                <h4>My Interests</h4>
+                                <p>
+                                Invitamus me testatur sed quod non dum animae tuae lacrimis ut libertatem deum rogus aegritudinis causet. 
+                                Dicens hoc contra serpentibus isto.Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum.
+                                
+                                <ul>
+                                        <li>
+                                                <i class="fa fa-plane"></i>
+                                                <span>Travel</span>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-book"></i>
+                                                <span>Books</span>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-chess-pawn"></i>
+                                                <span>Board Games</span>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-music"></i>
+                                                <span>Music</span>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-film"></i>
+                                                <span>Movies</span>
+                                        </li>
+                                </ul>
+                        </div>
+
+                        <!--MY SKILLS-->
+                        <div class="skills">   
+                                <h4>My skills</h4>                                             
+                                <div id="timeline">
+                                        <script type="text/html" id="timeline-template-block">                                                
+                                        <div class="timeline-block {0}">
+                                                <div class="content">
+                                                        <h4>{1}</h4>
+                                                        <ul>{2}</ul>
+                                                </div>
+                                        </div>
+                                        </script>
+                                </div>
+                        </div>
+                        
+                        <!--BOOKS-->
+                        <div class="books">
+                                <h4>Books</h4>
+                                <div id="books-list">
+                                        <script type="text/html" id="books-template-block">
+                                        <div class="{0}">
+                                                <p><strong>{1}</strong> {2} by <i>{3}</i></p>
+                                        </div>
+                                        </script>
+                                </div>
+                        </div>
+
+                        <!--CONTACT ME-->
+                        <div class="contact">
+                                <h4>Contact me</h4>
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div>
+                                                        <i class="far fa-envelope"></i>
+                                                        <p>my@mail.com</p>
+                                                </div>
+                                                <div>
+                                                        <i class="fas fa-paper-plane"></i>
+                                                        <p>@telegram</p>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div>
+                                                        <i class="fas fa-mobile-alt"></i>
+                                                        <p>+380 XX XX XX XXX</p>
+                                                </div>
+                                                <div>
+                                                        <i class="fab fa-facebook-f"></i>
+                                                        <p>facebook page</p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>                       
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--SCRIPTS-->
+        <!--LIBS-->
+        <script src="js/lib/jquery-3.3.1.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <!--CUSTOM-->
+        <script src="js/index.js"></script>
+    </body>
+</html>

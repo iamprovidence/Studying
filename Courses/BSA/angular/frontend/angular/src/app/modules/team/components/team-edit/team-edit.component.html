@@ -1,0 +1,32 @@
+<!--heading-->
+<h1>Edit team #<span class="text-primary"> {{ updateTeam?.id }} </span></h1>
+
+<!--form-->
+<form *ngIf="updateTeam" #form="ngForm">
+
+    <!--name-->
+    <div class="form-group">
+        <label for="team-name">Name</label>
+        <input id="team-name" type="text" class="form-control is-valid" placeholder="Enter name" name="name"
+            [(ngModel)]="updateTeam.name" #name="ngModel"
+            [class.is-valid]="name.valid" [class.is-invalid]="name.invalid" 
+            required pattern="[a-zA-Z0-9 ]{3,10}">
+
+        <div class="valid-feedback" [hidden]="name.invalid">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="name.valid">
+            Team name should be in range of 3 to 10 chars.
+        </div>
+    </div>
+
+    <!--buttons-->
+    <button type="submit" class="btn btn-primary w-100"
+        [disabled]="name.invalid"
+        (click)="update()">
+        Submit
+    </button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/teams">Go back</a>
+
+</form>

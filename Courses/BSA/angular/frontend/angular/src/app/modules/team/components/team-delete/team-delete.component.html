@@ -1,0 +1,24 @@
+<!--heading-->
+<h1>Delete user #<span class="text-danger">{{ deleteTeam?.id }}</span></h1>
+<p>Are you sure you want to <span class="text-danger font-weight-bold">delete</span> this record?</p>
+
+<!--form-->
+<form *ngIf="deleteTeam">
+
+    <!--name-->
+    <div class="form-group">
+        <label for="team-name">Name</label>
+        <input id="team-name" type="text" class="form-control" value="{{ deleteTeam.name }}" disabled>
+    </div>
+
+    <!--date of creation-->
+    <div class="form-group">
+        <label for="creation-date">Date of creation</label>
+        <input id="creation-date" type="text" class="form-control" value="{{ deleteTeam.createdAt | ukr_date }}" disabled>
+    </div>
+
+    <!--buttons--> 
+    <button type="submit" class="btn btn-danger w-100" (click)="delete()">Submit</button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/teams">Go back</a>
+
+</form>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--TITLE-->
+    <title>Task Manager</title>
+    
+    <!--META-->
+    <meta charset="UTF-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!--LINKS-->
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../css/index.css"/>
+</head>
+<body>
+    <!--NAVIGATION-->    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Task Manger</a>
+        
+        <!--toggler--->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Teams</a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tasks</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <!--CONTENT--->
+    <div class="container content">
+
+        <!--heading-->
+        <h1>Delete project #<span class="text-danger">4</span></h1>
+        <p>Are you sure you want to <span class="text-danger font-weight-bold">delete</span> this record?</p>
+
+        <!--form-->
+        <form>
+           
+            <!--name-->
+            <div class="form-group">
+                <label for="first-name">Name</label>
+                <input id="first-name" type="text" class="form-control" disabled>
+            </div>
+
+            <!--description-->
+            <div class="form-group">
+                <label for="last-name">Description</label>
+                <textarea id="last-name" type="text" class="form-control" disabled></textarea>
+            </div>
+            
+            <hr>
+
+            <!--deadline-->
+            <div class="form-group">
+                <label for="deadline">Deadline</label>
+                <input id="deadline" type="date" class="form-control" disabled>
+            </div>
+            
+            <!--creation-date-->
+            <div class="form-group">
+                <label for="creation-date">Date of creation</label>
+                <input id="creation-date" type="date" class="form-control" disabled>
+            </div>
+
+           <hr>
+           
+           
+            <!--author-->
+            <div class="form-group">
+                <label for="author">Select author</label>
+                <select id="author" class="form-control" disabled>
+                    <option>User 1</option>
+                    <option>User 2</option>
+                    <option>User 3</option>
+                    <option>User 4</option>
+                    <option>User 5</option>
+                </select>
+            </div>
+           
+            <!--team-->
+            <div class="form-group">
+                <label for="team">Select team</label>
+                <select id="team" class="form-control" disabled>
+                    <option>Team 1</option>
+                    <option>Team 2</option>
+                    <option>Team 3</option>
+                    <option>Team 4</option>
+                    <option>Team 5</option>
+                </select>
+            </div>
+
+            <!--buttons--> 
+            <button type="submit" class="btn btn-danger w-100">Submit</button>    
+            <a class="btn btn-info w-100 mt-2" href="#">Go back</a>
+
+        </form>
+        
+    </div>
+    
+    <!--FOOTER-->
+    <footer class="bg-dark text-center text-light">
+        ©Copyright
+    </footer>
+    
+    <!--SCRIPTS-->
+    <script src="../../js/lib/jquery-3.3.1.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

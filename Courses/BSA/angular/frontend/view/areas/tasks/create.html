@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--TITLE-->
+    <title>Task Manager</title>
+    
+    <!--META-->
+    <meta charset="UTF-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!--LINKS-->
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../css/index.css"/>
+</head>
+<body>
+    <!--NAVIGATION-->    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Task Manger</a>
+        
+        <!--toggler--->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Teams</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Tasks</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <!--CONTENT--->
+    <div class="container content">
+
+        <!--heading-->
+        <h1>Create <span class="text-success">new</span> task</h1>
+
+        <!--form-->
+        <form>
+
+            <!--name-->
+            <div class="form-group">
+                <label for="task-name">Name</label>
+                <input id="task-name" type="text" class="form-control is-valid" placeholder="Enter name">
+
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <!--description-->
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" type="text" class="form-control is-invalid" placeholder="Enter description"></textarea>
+
+                <div class="invalid-feedback">
+                    This field is required.
+                </div>
+            </div>
+
+            <hr>
+
+            <!--date of finish-->
+            <div class="form-group">
+                <label for="finish-date">Finished at</label>
+                <input id="finish-date" type="date" class="form-control" placeholder="Enter finish date" required>
+            </div>
+
+            <hr>
+           
+            <!--project-->
+            <div class="form-group">
+                <label for="project">Select project</label>
+                <select id="project" class="form-control">
+                    <option>Project 1</option>                    
+                    <option>Project 2</option>
+                    <option>Project 3</option>
+                    <option>Project 4</option>
+                    <option>Project 5</option>
+                </select>
+            </div>
+            
+            <!--performer-->
+            <div class="form-group">
+                <label for="performer">Select performer</label>
+                <select id="performer" class="form-control">
+                    <option>User 1</option>
+                    <option>User 2</option>          
+                    <option>User 3</option>          
+                    <option>User 4</option>          
+                    <option>User 5</option>         
+                </select>
+            </div>
+            
+            
+            <!--state-->
+            <div class="form-group">
+                <label for="state">Select state</label>
+                <select id="state" class="form-control">
+                    <option>Created</option>
+                    <option>Started</option>          
+                    <option>Finished</option>          
+                    <option>Closed</option>         
+                </select>
+            </div>
+
+            <!--buttons-->
+            <button type="submit" class="btn btn-success w-100">Submit</button>    
+            <a class="btn btn-info w-100 mt-2" href="#">Go back</a>
+
+        </form>
+        
+    </div>
+    
+    <!--FOOTER-->
+    <footer class="bg-dark text-center text-light">
+        ©Copyright
+    </footer>
+    
+    <!--SCRIPTS-->
+    <script src="../../js/lib/jquery-3.3.1.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

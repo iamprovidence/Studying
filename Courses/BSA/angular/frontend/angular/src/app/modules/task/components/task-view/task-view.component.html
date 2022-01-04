@@ -1,0 +1,56 @@
+<!--heading-->
+<h1>Task #<span class="text-info">{{ task?.id }}</span> </h1>
+
+<!--form-->
+<form *ngIf="task">
+
+    <!--name-->
+    <div class="form-group">
+        <label for="task-name">Name</label>
+        <input id="task-name" type="text" class="form-control" value="{{ task.name }}" disabled>
+    </div>
+
+    <!--description-->
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" type="text" class="form-control" disabled>{{task.description}}</textarea>
+    </div>
+
+    <hr>
+
+    <!--date of finish-->
+    <div class="form-group">
+        <label for="finish-date">Finished at</label>
+        <input id="finish-date" type="text" class="form-control" value="{{ task.finishedAt | ukr_date }}" disabled>
+    </div>
+    
+    <!--date of creation-->
+    <div class="form-group">
+        <label for="creation-date">Created at</label>
+        <input id="creation-date" type="text" class="form-control" value="{{ task.createdAt | ukr_date }}" disabled>
+    </div>
+
+    <hr>
+   
+    <!--project-->
+    <div class="form-group">
+        <label for="project">Select project</label>
+        <input id="project" type="text" class="form-control" value="{{ task.projectName }}" disabled>
+    </div>
+    
+    <!--performer-->
+    <div class="form-group" *ngIf="task.performerName">
+        <label for="performer">Select performer</label>
+        <input id="performer" type="text" class="form-control" value="{{ task.performerName }}" disabled>
+    </div>
+
+    <!--state-->
+    <div class="form-group">
+        <label for="state">Select state</label>
+        <input id="state" type="text" class="form-control" value="{{ task.stateName }}"  disabled>
+    </div>
+
+    <!--buttons--> 
+    <a class="btn btn-info w-100 mt-2" routerLink="/tasks">Go back</a>
+
+</form>

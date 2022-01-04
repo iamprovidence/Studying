@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular-notifier/styles.css";
+
+.content
+{
+    min-height: 900px;
+}
+
+.circle
+{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+textarea
+{
+    min-height: 100px;
+    max-height: 250px;
+}
+
+footer
+{
+    line-height: 50px;
+    min-height: 50px;
+}
+

@@ -1,0 +1,50 @@
+<!--heading-->
+<h1>User #<span class="text-info">{{ user?.id }}</span> </h1>
+
+<!--form-->
+<form *ngIf="user">
+
+    <!--first name-->
+    <div class="form-group">
+        <label for="first-name">First name</label>
+        <input id="first-name" type="text" class="form-control" value="{{ user.firstName }}" disabled>
+    </div>
+
+    <!--last name-->
+    <div class="form-group">
+        <label for="last-name">Last name</label>
+        <input id="last-name" type="text" class="form-control" value="{{ user.lastName }}" disabled>
+    </div>
+
+    <!--email address-->
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" type="email" class="form-control" value="{{ user.email }}" disabled>
+    </div>
+    
+    <hr>
+
+    <!--date of birth-->
+    <div class="form-group">
+        <label for="bithday">Date of birth</label>
+        <input id="bithday" type="text" class="form-control" value="{{ user.birthday | ukr_date }}" disabled>
+    </div>
+
+    <!--date of registration-->
+    <div class="form-group">
+        <label for="registration-date">Date of registration</label>
+        <input id="registration-date" type="text" class="form-control" value="{{ user.registeredAt | ukr_date }}" disabled>
+    </div>
+    
+    <hr>
+
+    <!--team-->
+    <div class="form-group" *ngIf="user.teamName">
+        <label for="team">Team</label>         
+        <input id="team" type="text" class="form-control" value="{{ user.teamName }}" disabled>
+    </div>
+
+    <!--buttons--> 
+    <a class="btn btn-info w-100 mt-2" routerLink="/users">Go back</a>
+
+</form>

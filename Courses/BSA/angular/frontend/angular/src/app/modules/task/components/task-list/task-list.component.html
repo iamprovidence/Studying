@@ -1,0 +1,58 @@
+<!--header-->
+<h1>Tasks</h1>
+
+<!--create-->
+<div class="mb-2 mt-2">
+    <a class="btn btn-success" routerLink="/tasks/create">Create</a>
+</div>
+
+<!--data-->
+<table class="table table-bordered text-center">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <!--list-->
+        <tr *ngFor="let task of tasks">
+            <th scope="row">
+                {{ task.id }}
+            </th>
+            <td>
+                {{ task.name }}  
+                <div class="circle" taskState="{{ task.taskStateId }}"></div>
+            </td>
+            <td>
+                {{ task.shortDescription | dotted }}
+            </td>
+
+            <!--buttons-->
+            <td>
+                <a class="btn btn-warning" [routerLink]="['/tasks', 'view', task.id]">View</a>
+            </td>
+            <td>
+                <a class="btn btn-info" [routerLink]="['/tasks', 'edit', task.id]">Update</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" [routerLink]="['/tasks', 'delete', task.id]">Delete</a>
+            </td>
+        </tr>
+
+        
+        <!--no data-->
+        <tr *ngIf="!tasks || !tasks.length">
+            <td colspan="6">No records</td>
+        </tr>
+
+    </tbody>
+</table>

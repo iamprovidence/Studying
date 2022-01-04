@@ -1,0 +1,53 @@
+<!--header-->
+<h1>Teams</h1>
+
+<!--create-->
+<div class="mb-2 mt-2">
+    <a class="btn btn-success" routerLink="/teams/create">Create</a>
+</div>
+
+<!--data-->
+<table class="table table-bordered text-center">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Created at</th>
+
+
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+        <!--list-->
+        <tr *ngFor="let team of teams">
+            <th scope="row">
+                {{ team.id }}
+            </th>
+            <td>
+                {{ team.name }}
+            </td>        
+            <td>
+                {{ team.createdAt | ukr_date }}
+            </td>
+
+            <!--buttons-->
+            <td>
+                <a class="btn btn-info" [routerLink]="['/teams', 'edit', team.id]">Update</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" [routerLink]="['/teams', 'delete', team.id]">Delete</a>
+            </td>
+        </tr>
+
+        <!--no data-->
+        <tr *ngIf="!teams || !teams.length">
+            <td colspan="5">No records</td>
+        </tr>
+
+    </tbody>
+</table>   

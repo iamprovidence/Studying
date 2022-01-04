@@ -1,0 +1,129 @@
+<!--heading-->
+<h1>Create <span class="text-success">new</span> task</h1>
+
+<!--form-->
+<form #form="ngForm">
+
+    <!--name-->
+    <div class="form-group">
+        <label for="task-name">Name</label>
+        <input id="task-name" type="text" class="form-control is-valid" placeholder="Enter name" name="name"
+            [(ngModel)]="createTaskDTO.name" #name="ngModel"
+            [class.is-valid]="name.valid && name.touched" [class.is-invalid]="name.invalid && name.touched" 
+            required pattern="[a-zA-Z0-9 ]{3,15}">
+
+        <div class="valid-feedback" [hidden]="name.invalid || name.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="name.valid || name.untouched">
+            Value should be in range of 3 to 15 chars.
+        </div>
+    </div>
+
+    <!--description-->
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" type="text" class="form-control is-invalid" placeholder="Enter description" name="description"
+            [(ngModel)]="createTaskDTO.description" #description="ngModel"
+            [class.is-valid]="description.valid && description.touched" [class.is-invalid]="description.invalid && description.touched" 
+            required pattern="[a-zA-Z0-9,.!? ]{3,255}"></textarea>
+
+        <div class="valid-feedback" [hidden]="description.invalid || description.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="description.valid || description.untouched">
+            Value should be in range of 3 to 255 chars.
+        </div>
+    </div>
+
+    <hr>
+
+    <!--date of finish-->
+    <div class="form-group">
+        <label for="finish-date">Finished at</label>
+        <input id="finish-date" type="date" class="form-control" placeholder="Enter finish date" name="deadline"
+            [(ngModel)]="createTaskDTO.finishedAt" #deadline="ngModel"
+            [class.is-valid]="deadline.valid && deadline.touched" [class.is-invalid]="deadline.invalid && deadline.touched" 
+            required>
+
+        <div class="valid-feedback" [hidden]="deadline.invalid || deadline.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="deadline.valid || deadline.untouched">
+            This field is required.
+        </div>
+    </div>
+
+    <hr>
+   
+    <!--project-->
+    <div class="form-group">
+        <label for="project">Select project</label>
+        <select id="project" class="custom-select" name="project"
+            [(ngModel)]="createTaskDTO.projectId" #project="ngModel"
+            [class.is-valid]="project.valid && project.touched" [class.is-invalid]="project.invalid && project.touched" 
+            required>            
+            <option value="undefined" hidden="hidden">Choose here</option>
+    
+            <option *ngFor="let project of projects" [ngValue]="project.id"> {{ project.name  }} </option>
+        </select>
+        
+        <div class="valid-feedback" [hidden]="project.invalid || project.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="project.valid || project.untouched">
+            This field is required.
+        </div>
+    </div>
+    
+    <!--performer-->    
+    <div class="form-group">
+        <label for="performer">Select performer</label>
+        <select id="performer" class="custom-select" name="performer" 
+            [(ngModel)]="createTaskDTO.performerId" #performer="ngModel"
+            [class.is-valid]="performer.valid && performer.touched" [class.is-invalid]="performer.invalid && performer.touched">            
+            <option value="undefined" hidden="hidden">Choose here</option>
+    
+            <option *ngFor="let user of users" [ngValue]="user.id"> {{ user.firstName }} {{ user.lastName }}</option>
+        </select>
+        
+        <div class="valid-feedback" [hidden]="performer.invalid || performer.untouched">
+            Looks good!
+        </div>
+
+    </div>
+    
+    <!--state-->
+    <div class="form-group">
+        <label for="state">Select state</label>
+        <select id="state" class="custom-select" name="state"
+            [(ngModel)]="createTaskDTO.taskStateId" #state="ngModel"
+            [class.is-valid]="state.valid && state.touched" [class.is-invalid]="state.invalid && state.touched" 
+            required>
+
+            <option *ngFor="let state of taskStates" [ngValue]="state.id"> {{ state.value }} </option>
+
+        </select>
+        
+        <div class="valid-feedback" [hidden]="state.invalid || state.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="state.valid || state.untouched">
+            This field is required.
+        </div>
+    </div>
+
+    <!--buttons-->
+    <button type="submit" class="btn btn-success w-100"
+        [disabled]="name.invalid || description.invalid || deadline.invalid || performer.invalid || project.invalid || state.invalid"
+        (click)="create()">
+        Submit
+    </button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/tasks">Go back</a>
+
+</form>

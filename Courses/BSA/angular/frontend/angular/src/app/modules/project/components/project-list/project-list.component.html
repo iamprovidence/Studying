@@ -1,0 +1,56 @@
+<!--header-->
+<h1>Projects</h1>
+
+<!--create-->
+<div class="mb-2 mt-2">
+    <a class="btn btn-success" routerLink="/projects/create">Create</a>
+</div>
+
+<!--data-->
+<table class="table table-bordered text-center">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <!--list-->
+        <tr *ngFor="let project of projects">
+            <th scope="row">
+                {{ project.id }}
+            </th>
+            <td>
+                {{ project.name }}
+            </td>
+            <td>
+                {{ project.shortDescription | dotted }}
+            </td>
+
+            <!--buttons-->
+            <td>
+                <a class="btn btn-warning" [routerLink]="['/projects', 'view', project.id]">View</a>
+            </td>
+            <td>
+                <a class="btn btn-info" [routerLink]="['/projects', 'edit', project.id]">Update</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" [routerLink]="['/projects', 'delete', project.id]">Delete</a>
+            </td>
+        </tr>
+
+        <!--no data-->
+        <tr *ngIf="!projects || !projects.length">
+            <td colspan="6">No records</td>
+        </tr>
+    
+    </tbody>
+</table>        

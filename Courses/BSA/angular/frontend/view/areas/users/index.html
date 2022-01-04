@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--TITLE-->
+    <title>Task Manager</title>
+    
+    <!--META-->
+    <meta charset="UTF-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!--LINKS-->
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="../../css/index.css"/>
+</head>
+<body>
+    <!--NAVIGATION-->    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Task Manger</a>
+        
+        <!--toggler--->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Teams</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tasks</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <!--CONTENT--->
+    <div class="container content">
+
+        <!--header-->
+        <h1>Users</h1>
+
+        <!--create-->
+        <div class="mb-2 mt-2">
+            <a class="btn btn-success" href="#">Create</a>
+        </div>
+
+        <!--data-->
+        <table class="table table-bordered text-center">
+
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>   
+
+                    <th scope="col">View</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+
+                    <td>
+                        <a class="btn btn-warning" href="#">View</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="#">Update</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="#">Delete</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+
+                    <td>
+                        <a class="btn btn-warning" href="#">View</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="#">Update</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="#">Delete</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+
+                    <td>
+                        <a class="btn btn-warning" href="#">View</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="#">Update</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="#">Delete</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>        
+    </div>
+    
+    <!--FOOTER-->
+    <footer class="bg-dark text-center text-light">
+        ©Copyright
+    </footer>
+    
+    <!--SCRIPTS-->
+    <script src="../../js/lib/jquery-3.3.1.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

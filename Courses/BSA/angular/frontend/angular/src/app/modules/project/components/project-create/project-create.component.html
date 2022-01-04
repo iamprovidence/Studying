@@ -1,0 +1,106 @@
+<!--heading-->
+<h1>Create <span class="text-success">new</span> project</h1>
+
+<!--form-->
+<form #form="ngForm">
+
+    <!--name-->
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" class="form-control is-valid" placeholder="Enter name" name="name"
+            [(ngModel)]="createProjectDTO.name" #name="ngModel"
+            [class.is-valid]="name.valid && name.touched" [class.is-invalid]="name.invalid && name.touched" 
+            required pattern="[a-zA-Z0-9 ]{3,15}">
+
+        <div class="valid-feedback" [hidden]="name.invalid || name.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="name.valid || name.untouched">
+            Value should be in range of 3 to 15 chars.
+        </div>
+    </div>
+
+    <!--description-->
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" type="text" class="form-control is-invalid" placeholder="Enter description" name="description"
+            [(ngModel)]="createProjectDTO.description" #description="ngModel"
+            [class.is-valid]="description.valid && description.touched" [class.is-invalid]="description.invalid && description.touched" 
+            required pattern="[a-zA-Z0-9,.!? ]{3,255}"></textarea>
+
+        <div class="valid-feedback" [hidden]="description.invalid || description.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="description.valid || description.untouched">
+            Value should be in range of 3 to 255 chars.
+        </div>
+    
+    </div>
+
+    <hr>
+    
+    <!--deadline-->
+    <div class="form-group">
+        <label for="deadline">Deadline</label>
+        <input id="deadline" type="date" class="form-control" placeholder="Enter deadline date" name="deadline"
+            [(ngModel)]="createProjectDTO.deadline" #deadline="ngModel"
+            [class.is-valid]="deadline.valid && deadline.touched" [class.is-invalid]="deadline.invalid && deadline.touched" 
+            required>
+
+        <div class="valid-feedback" [hidden]="deadline.invalid || deadline.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="deadline.valid || deadline.untouched">
+            This field is required.
+        </div>
+
+    </div>
+    
+    <hr>
+   
+    <!--author-->
+    <div class="form-group">
+        <label for="author">Select author</label>
+        <select id="author" class="custom-select" name="author" 
+            [(ngModel)]="createProjectDTO.authorId" #author="ngModel"
+            [class.is-valid]="author.valid && author.touched" [class.is-invalid]="author.invalid && author.touched" 
+            required>            
+            <option value="undefined" hidden="hidden">Choose here</option>
+    
+            <option *ngFor="let user of users" [ngValue]="user.id"> {{ user.firstName  }} {{ user.lastName }}</option>
+        </select>
+        
+        <div class="valid-feedback" [hidden]="author.invalid || author.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="author.valid || author.untouched">
+            This field is required.
+        </div>
+    </div>
+   
+    <!--team-->
+    <div class="form-group">
+        <label for="team">Select team</label>
+        <select id="team" class="custom-select" name="team"
+            [(ngModel)]="createProjectDTO.teamId" #team="ngModel"
+            [class.is-valid]="team.valid && team.touched" [class.is-invalid]="team.invalid && team.touched" >
+            
+            <option value="undefined" hidden="hidden">Choose here</option>
+    
+            <option *ngFor="let team of teams" [ngValue]="team.id"> {{ team.name }}</option>
+        </select>
+    </div>
+
+    <!--buttons-->
+    <button type="submit" class="btn btn-success w-100" 
+        [disabled]="name.invalid || description.invalid || deadline.invalid || author.invalid"
+        (click)="create()">
+        Submit
+    </button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/projects">Go back</a>
+
+</form>

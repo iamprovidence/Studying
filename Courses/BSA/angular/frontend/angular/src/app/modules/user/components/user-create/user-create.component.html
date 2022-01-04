@@ -1,0 +1,101 @@
+<!--heading-->
+<h1>Create <span class="text-success">new</span> user</h1>
+
+<!--form-->
+<form #form="ngForm">
+
+    <!--first name-->
+    <div class="form-group">
+        <label for="first-name">First name</label>
+        <input id="first-name" type="text" class="form-control" placeholder="Enter first name" name="name"
+            [(ngModel)]="createUserDTO.firstName" #name="ngModel"
+            [class.is-valid]="name.valid && name.touched" [class.is-invalid]="name.invalid && name.touched" 
+            required pattern="[a-zA-Z]{3,10}">
+
+        <div class="valid-feedback" [hidden]="name.invalid || name.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="name.valid || name.untouched">
+            Value should be in range of 3 to 10 chars.
+        </div>
+    </div>
+
+    <!--last name-->
+    <div class="form-group">
+        <label for="last-name">Last name</label>
+        <input id="last-name" type="text" class="form-control  is-invalid" placeholder="Enter last name" name="surname"
+            [(ngModel)]="createUserDTO.lastName" #surname="ngModel"
+            [class.is-valid]="surname.valid && surname.touched" [class.is-invalid]="surname.invalid && surname.touched" 
+            required pattern="[a-zA-Z]{3,10}">
+
+        <div class="valid-feedback" [hidden]="surname.invalid || surname.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="surname.valid || surname.untouched">
+            Value should be in range of 3 to 10 chars.
+        </div>
+    </div>
+
+    <!--email address-->
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" type="email" class="form-control" placeholder="Enter email" name="email"
+            [(ngModel)]="createUserDTO.email" #email="ngModel"
+            [class.is-valid]="email.valid && email.touched" [class.is-invalid]="email.invalid && email.touched" 
+            required pattern="[a-zA-Z_.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+
+        <small id="email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+        <div class="valid-feedback" [hidden]="email.invalid || email.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="email.valid">
+            Email is invalid.
+        </div>
+    </div>
+    
+    <hr>
+
+    <!--date of birth-->    
+    <div class="form-group">
+        <label for="bithday">Date of birth</label>
+        <input id="bithday" type="date" class="form-control" name="birthday"
+            [(ngModel)]="createUserDTO.birthday" #birthday="ngModel"
+            [class.is-valid]="birthday.valid && birthday.touched" [class.is-invalid]="birthday.invalid && birthday.touched" 
+            required>
+
+        <div class="valid-feedback" [hidden]="birthday.invalid || birthday.untouched">
+            Looks good!
+        </div>
+
+        <div class="invalid-feedback" [hidden]="birthday.valid || birthday.untouched">
+            This field is required.
+        </div>
+    </div>
+
+    <hr>
+
+    <!--team-->
+    <div class="form-group">
+        <label for="team">Select team</label>
+        <select id="team" class="custom-select" name="team" 
+            [(ngModel)]="createUserDTO.teamId" #team="ngModel"
+            [class.is-valid]="team.valid && team.touched" [class.is-invalid]="team.invalid && team.touched" >
+            <option value="undefined" hidden="hidden">Choose here</option>
+
+            <option *ngFor="let team of teams" [ngValue]="team.id"> {{ team.name }} </option>
+        </select>
+    </div>
+
+    <!--buttons-->
+    <button type="submit" class="btn btn-success w-100"
+        [disabled]="name.invalid || surname.invalid || email.invalid || birthday.invalid"
+        (click)="create()">
+        Submit
+    </button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/users">Go back</a>
+
+</form>

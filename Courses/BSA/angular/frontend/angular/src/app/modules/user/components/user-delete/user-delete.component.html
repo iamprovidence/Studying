@@ -1,0 +1,52 @@
+<!--heading-->
+<h1>Delete user #<span class="text-danger">{{ delteItem?.id }}</span></h1>
+<p>Are you sure you want to <span class="text-danger font-weight-bold">delete</span> this record?</p>
+
+<!--form-->
+<form *ngIf="deleteItem">
+
+    <!--first name-->
+    <div class="form-group">
+        <label for="first-name">First name</label>
+        <input id="first-name" type="text" class="form-control" value="{{ deleteItem.firstName }}" disabled>
+    </div>
+
+    <!--last name-->
+    <div class="form-group">
+        <label for="last-name">Last name</label>
+        <input id="last-name" type="text" class="form-control" value="{{ deleteItem.lastName }}" disabled>
+    </div>
+
+    <!--email address-->
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" type="text" class="form-control" value="{{ deleteItem.email }}" disabled>
+    </div>
+    
+    <hr>
+
+    <!--date of birth-->
+    <div class="form-group">
+        <label for="bithday">Date of birth</label>
+        <input id="bithday" type="text" class="form-control" value="{{ deleteItem.birthday | ukr_date }}" disabled>
+    </div>
+    
+    <!--date of registration-->
+    <div class="form-group">
+        <label for="registration-date">Date of registration</label>
+        <input id="registration-date" type="text" class="form-control" value="{{ deleteItem.registeredAt | ukr_date }}" disabled>
+    </div>
+
+    <hr>
+    
+    <!--team-->
+    <div class="form-group" *ngIf="deleteItem.teamName">
+        <label for="team">Select team</label>
+        <input id="team" type="text" class="form-control" value="{{ deleteItem.teamName }}" disabled>
+    </div>
+
+    <!--buttons--> 
+    <button type="submit" class="btn btn-danger w-100" (click)="delete()">Submit</button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/users">Go back</a>
+
+</form>

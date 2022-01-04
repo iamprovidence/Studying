@@ -1,0 +1,60 @@
+<!--header-->
+<h1>Users</h1>
+
+<!--create-->
+<div class="mb-2 mt-2">
+    <a class="btn btn-success" routerLink="/users/create">Create</a>
+</div>
+
+<!--data-->
+<table class="table table-bordered text-center">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>   
+
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <!--list-->
+        <tr *ngFor="let user of users">
+            <th scope="row">
+                {{ user.id }}
+            </th>
+            <td>
+                {{ user.firstName }}
+            </td>
+            <td>
+                {{ user.lastName }}
+            </td>
+            <td>
+                {{ user.email }}
+            </td>
+
+            <!--buttons-->
+            <td>
+                <a class="btn btn-warning" [routerLink]="['/users', 'view', user.id]" >View</a>
+            </td>
+            <td>
+                <a class="btn btn-info" [routerLink]="['/users', 'edit', user.id]">Update</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" [routerLink]="['/users', 'delete', user.id]">Delete</a>
+            </td>
+        </tr>
+
+        <!--no data-->
+        <tr *ngIf="!users || !users.length">
+            <td colspan="8">No records</td>
+        </tr>
+
+    </tbody>
+</table>        

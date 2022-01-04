@@ -1,0 +1,58 @@
+<!--heading-->
+<h1>Delete task #<span class="text-danger">{{ deleteItem?.id }}</span></h1>
+<p>Are you sure you want to <span class="text-danger font-weight-bold">delete</span> this record?</p>
+
+<!--form-->
+<form *ngIf="deleteItem">
+
+    <!--name-->
+    <div class="form-group">
+        <label for="task-name">Name</label>
+        <input id="task-name" type="text" class="form-control" value="{{ deleteItem.name }}" disabled>
+    </div>
+
+    <!--description-->
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" type="text" class="form-control" disabled>{{ deleteItem.description }}</textarea>
+    </div>
+
+    <hr>
+
+    <!--date of finish-->
+    <div class="form-group">
+        <label for="finish-date">Finished at</label>
+        <input id="finish-date" type="text" class="form-control" value="{{ deleteItem.finishedAt | ukr_date }}" disabled>
+    </div>
+    
+    <!--date of creation-->
+    <div class="form-group">
+        <label for="creation-date">Created at</label>
+        <input id="creation-date" type="text" class="form-control" value="{{ deleteItem.createdAt | ukr_date }}" disabled>
+    </div>
+
+    <hr>
+   
+    <!--project-->
+    <div class="form-group">
+        <label for="project">Select project</label>
+        <input id="project" type="text" class="form-control" value="{{ deleteItem.projectName }}" disabled>
+    </div>
+    
+    <!--performer-->
+    <div class="form-group" *ngIf="deleteItem.performerName">
+        <label for="performer">Select performer</label>
+        <input id="performer" type="text" class="form-control" value="{{ deleteItem.performerName }}" disabled>
+    </div>
+
+    <!--state-->
+    <div class="form-group">
+        <label for="state">Select state</label>
+        <input id="state" type="text" class="form-control" value="{{ deleteItem.stateName }}"  disabled>
+    </div>
+
+    <!--buttons--> 
+    <button type="submit" class="btn btn-danger w-100" (click)="delete()">Submit</button>    
+    <a class="btn btn-info w-100 mt-2" routerLink="/tasks">Go back</a>
+
+</form>

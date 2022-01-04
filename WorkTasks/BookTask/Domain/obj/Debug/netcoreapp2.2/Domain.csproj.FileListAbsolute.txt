@@ -1,0 +1,9 @@
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\bin\Debug\netcoreapp2.2\Domain.deps.json
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\bin\Debug\netcoreapp2.2\Domain.dll
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\bin\Debug\netcoreapp2.2\Domain.pdb
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\obj\Debug\netcoreapp2.2\Domain.csprojAssemblyReference.cache
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\obj\Debug\netcoreapp2.2\Domain.csproj.CoreCompileInputs.cache
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\obj\Debug\netcoreapp2.2\Domain.AssemblyInfoInputs.cache
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\obj\Debug\netcoreapp2.2\Domain.AssemblyInfo.cs
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\obj\Debug\netcoreapp2.2\Domain.dll
+D:\Projects\University_Apps\WorkTasks\BookTask\Domain\obj\Debug\netcoreapp2.2\Domain.pdb
